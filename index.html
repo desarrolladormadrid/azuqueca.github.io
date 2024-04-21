@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construcción de Vivienda</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .photos img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .download {
+            margin-top: 40px;
+        }
+
+        /* Modal */
+        .modal-lg {
+            max-width: 90%;
+        }
+
+        .modal-body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <h1 class="display-6">Construcción de Vivienda en Azuqueca de Henares </h1>
+
+        </div>
+    </header>
+    <main class="container py-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="photos mb-4">
+                    <img src="1.jpeg" alt="Foto 1" onclick="showImage('1.jpeg')">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="photos mb-4">
+                    <img src="2.jpeg" alt="Foto 2" onclick="showImage('2.jpeg')">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="photos mb-4">
+                    <img src="3.jpeg" alt="Foto 3" onclick="showImage('3.jpeg')">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="photos mb-4">
+                    <img src="4.jpeg" alt="Foto 4" onclick="showImage('4.jpeg')">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="photos mb-4">
+                    <img src="5.jpeg" alt="Foto 5" onclick="showImage('5.jpeg')">
+                </div>
+            </div>
+            <div class="row">
+                <div class=" px-2 col-md-12 " style="padding:50px!important;">
+                    <div class="">
+                        <p>Nombre: Luis </p>
+                        <p>Teléfono: 689 456 107 </p>
+                        <p>Email: desarrolladormadrid@gmail.com</p>
+                        <a href="memoria.pdf" download class="btn btn-primary btn-lg">Descargar Memoria</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showImage(imageSrc) {
+            var modal = '<div class="modal" tabindex="-1" role="dialog">' +
+                '<div class="modal-dialog modal-lg" role="document">' +
+                '<div class="modal-content">' +
+                '<div class="modal-body">' +
+                '<img src="' + imageSrc + '" class="img-fluid">' +
+                '</div>' +
+                '<div class="modal-footer">' +
+                '<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+            $('body').append(modal);
+            $('.modal').modal('show').on('hidden.bs.modal', function () {
+                $(this).remove();
+            });
+        }
+    </script>
+</body>
+
+</html>
